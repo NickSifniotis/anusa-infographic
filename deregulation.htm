@@ -75,31 +75,30 @@ Lots of text here.
 <form class="form-horizontal" id="inputs" role="form">
   <div class="form-group">
     <label for="DegreeBand" class="input-label control-label">Subject area</label>
-    <select class="selectpicker form-control" id="DegreeBandSelector">
-    <option value="1">Accounting</option>
-    <option value="2">Administration</option>
-    <!--  <option value="3">Agriculture</option> -->
-    <option value="4">Behavioural Science</option>
-    <!--   <option value="5">Built Environment</option> -->
-    <option value="6">Commerce</option>
-    <option value="7">Computing</option>
-    <!--    <option value="8">Dentistry</option> -->
-    <option value="9">Economics</option>
-    <!--    <option value="10">Education</option> -->
-    <option value="11">Engineering</option>
-    <option value="12">Foreign Languages</option>
-    <!--    <option value="13">Health</option> -->
-    <option value="14">Humanities</option>
-    <option value="15">Law</option>
-    <option value="16">Mathematics</option>
-    <!-- <option value="17">Medicine</option> -->
-    <!--    <option value="18">Nursing</option> -->
-    <option value="19">Science</option>
-    <option value="20">Social Studies</option>
-    <option value="21">Statistics</option>
-    <!--    <option value="22">Surveying</option> -->
-    <!--    <option value="23">Veterinary Science</option> -->
-    <option value="24">Visual and Performing Arts</option>
+    <select class="selectpicker form-control" id="DegreeBandSelector">    
+      <option value="200">Accounting</option>
+      <option value="201">Administration</option>
+      <option value="202">Economics</option>
+      <option value="203">Commerce</option>
+      <option value="204">Law</option>
+      <option value="205">Dentistry</option>
+      <option value="206">Medicine</option>
+      <option value="207">Veterinary Science</option>
+      <option value="100">Computing</option>
+      <option value="101">Built Environment</option>
+      <option value="102">Health</option>
+      <option value="103">Engineering</option>
+      <option value="104">Surveying</option>
+      <option value="105">Agriculture</option>
+      <option value="106">Mathematics</option>
+      <option value="107">Statistics</option>
+      <option value="108">Science</option>
+      <option value="0">Humanities</option>
+      <option value="1">Behavioural Science</option>
+      <option value="2">Social studies</option>
+      <option value="3">Foreign Languages</option>
+      <option value="4">Visual and Performing Arts</option>
+      <option value="5">Education and Nursing</option>
     </select>
   </div>
   <div class="form-group">
@@ -110,45 +109,39 @@ Lots of text here.
   </div>
 
   <div class="form-group">
-    <label for="TuitionFees" class="input-label control-label">Deregulated annual tuition fees</label>
-    <button type="button" class="btn" data-toggle="modal" data-target="#TuitionFeesModal">?</button>
-    <input type="text" id="TuitionFeesSlider" class="slider form-control" data-slider-min="30" data-slider-max="100" data-slider-step=".1">
-    <b id=TuitionFeesBox></b>
-  </div>
-
-  <div class="form-group">
-    <label for="InflationRate" class="input-label control-label">Inflation rate</label>
-    <button type="button" class="btn" data-toggle="modal" data-target="#InflationRateModal">?</button>
-    <input type="text" id="InflationRateSlider" class="slider form-control" data-slider-min="0" data-slider-max="6" data-slider-step="0.1" data-slider-value="2.77">
-    <b id=InflationRateBox>2.77 %</b>
-  </div>
-
-  <div class="form-group">
-    <label for="BondRate" class="input-label control-label">Interest rate</label>
-    <button type="button" class="btn" data-toggle="modal" data-target="#TreasuryRateModal">?</button>
-    <input type="text" id="BondRateSlider" class="slider form-control" data-slider-min="0" data-slider-max="6" data-slider-step="0.1" data-slider-value="5">
-    <b id=BondRateBox>5.0 %</b>
-  </div>
-
-  <div class="form-group">
-    <label for="GapYears" class="input-label control-label">Years unemployed</label>
-    <button type="button" class="btn" data-toggle="modal" data-target="#GapYearModal">?</button>
-    <input type="text" id="GapYearSlider" class="slider form-control" data-slider-min="0" data-slider-max="10" data-slider-step="1" data-slider-value="2">
-    <b id=GapYearBox>2</b>
-  </div>
-
-  <div class="form-group">
-    <label for="StartingSalary" class="input-label control-label">Starting salary</label>
-    <button type="button" class="btn" data-toggle="modal" data-target="#StartingSalaryModal">?</button>
-    <input type="text" id="StartingSalarySlider" class="slider form-control" data-slider-min="30" data-slider-max="100" data-slider-step="1" data-slider-value="52.5">
-    <b id=StartingSalaryBox>$ 52.5 K</b>
-  </div>
-
-  <div class="form-group">
     <label for="SalaryIncrease" class="input-label control-label">Annual raises as percentage</label>
     <button type="button" class="btn" data-toggle="modal" data-target="#SalaryIncreaseModal">?</button>
     <input type="text" id="SalaryIncreaseSlider" class="slider form-control" data-slider-min="0" data-slider-max="10" data-slider-step="0.1" data-slider-value="5">
     <b id=SalaryIncreaseBox>5.0 %</b>
+  </div>
+  
+  <div class="form-group">
+    <label class="input-label control-label">Interest Rate</label>
+    <button type="button" class="btn" data-toggle="modal" data-target="#InterestRateModal">?</button>
+    <b class="slider">2.1%</b>      <!-- This is madness!! -->
+  </div>
+  
+  <div class="form-group">
+    <label class="input-label control-label">Inflation Rate</label>
+    <button type="button" class="btn" data-toggle="modal" data-target="#InflationRateModal">?</button>
+    <b class="slider">1.3%</b>      <!-- Madness? THIS IS SPARTA! -->
+  </div>
+  
+  <div class="form-group">
+    <label class="input-label control-label">Starting Salary</label>
+    <button type="button" class="btn" data-toggle="modal" data-target="#StartingSalaryModal">?</button>
+    <b class="slider">$59,420</b>
+  </div>
+  
+  <div class="form-group">
+    <label class="input-label control-label">Increase to Tuition Cost</label>
+    <button type="button" class="btn" data-toggle="modal" data-target="#IncreaseFeesModal">?</button>
+    <b class="slider">30.0%</b>
+  </div>
+  
+  <div class="form-group">
+    This is where the text explaining the model goes. Note that interest is 2.1%, inflation is 1.3% and the starting salary is 59,420. The increase to the cost of
+    tuition is anticipated to be at least 30%.
   </div>
 </form>
 </div>
@@ -304,22 +297,6 @@ government webpage</a>.  The spreadsheets can be
  and <a href="http://www.rba.gov.au/statistics/tables/xls/f02hist.xls"> here</a>.
 </p>
     </div>
-    </div>
-  </div>
-</div>
-
-<!--Gap years-->
-<div class="modal fade bs-example-modal-sm" id="GapYearModal" tabindex="-1" role="dialog">
-  <div class="modal-dialog modal-sm">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title">Years unemployed</h4>
-      </div>
-      <div class="modal-body">
-Choose here the number of years that elapse before the student begins earning the specified starting salary.
-These years could represent years pursuing a graduate degree, years dedicated to volunteer work, or years taken to raise a family.
-       </div>
     </div>
   </div>
 </div>

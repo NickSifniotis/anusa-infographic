@@ -86,33 +86,6 @@ function updateUnchanged(elementID) {
     }, 100);
 }
 
-// InflationRate
-function updateInflationRate (ev) {
-  $('#InflationRateBox')[0].innerHTML = ev.value.toFixed(1) + " %";
-  if (ev.value > BondRateSlider.data('slider').getValue()) {
-    // inflation rate can't rise above bond rate
-    BondRateSlider.data('slider').setValue(ev.value);
-    $('#BondRateBox')[0].innerHTML = ev.value.toFixed(1) + " %";
-  }
-  updateUnchanged('#InflationRateBox');
-}
-var InflationRateSlider = $('#InflationRateSlider').slider(sliderOptions);
-InflationRateSlider.on('slide', updateInflationRate);
-InflationRateSlider.on('slideStop', updateInflationRate);
-
-// BondRate
-function updateBondRate (ev) {
-  $('#BondRateBox')[0].innerHTML = ev.value.toFixed(1) + " %";
-  if (ev.value < InflationRateSlider.data('slider').getValue()) {
-    // bond rate can't drop below inflation rate
-    InflationRateSlider.data('slider').setValue(ev.value);
-    $('#InflationRateBox')[0].innerHTML = ev.value.toFixed(1) + " %";
-  }
-  updateUnchanged('#BondRateBox');
-}
-var BondRateSlider = $('#BondRateSlider').slider(sliderOptions);
-BondRateSlider.on('slide', updateBondRate);
-BondRateSlider.on('slideStop', updateBondRate);
 
 // DegreeLength
 function updateDegreeLength (ev) {
@@ -123,106 +96,6 @@ var DegreeLengthSlider = $('#DegreeLengthSlider').slider(sliderOptions);
 DegreeLengthSlider.on('slide', updateDegreeLength);
 DegreeLengthSlider.on('slideStop', updateDegreeLength);
 
-// TuitionFees
-function updateTuitionFees (ev) {
-  $('#TuitionFeesBox')[0].innerHTML = "$ " + ev.value.toFixed(0) + " K";
-  updateUnchanged('#TuitionFeesBox');
-}
-var TuitionFeesSlider = $('#TuitionFeesSlider').slider(sliderOptions);
-TuitionFeesSlider.on('slide', updateTuitionFees);
-TuitionFeesSlider.on('slideStop', updateTuitionFees);
-
-function updateFeesSlider() {
-    var min, max;
-    switch (parseInt(DegreeBandSelector.val())) {
-        case 1:             /*Accounting*/
-          min = 10.3
-          max = 28.4;
-          break;
-         case 2:            /*Administration*/
-          min = 10.3
-          max = 28.4;
-          break;
-         case 4:            /*Behavioural Science*/
-          min = 7.1
-          max = 21.6;
-          break;
-         case 6:            /*Commerce*/
-          min = 10.3
-          max = 28.4;
-          break;
-         case 7:            /*Computing*/
-          min = 9.7
-          max = 21.6;
-          break;
-         case 9:            /*Economics*/
-          min = 10.3
-          max = 28.4;
-          break;
-         case 11:            /*Engineering*/
-          min = 14.0
-          max = 18.7;
-          break;
-         case 12:            /*Foreign Languages*/
-          min = 6.4
-          max = 14.6;
-          break;
-         case 14:            /*Humanities*/
-          min = 5.8
-          max = 20.3;
-          break;
-         case 15:            /*Law*/
-          min = 10.3
-          max = 28.4;
-          break;
-         case 16:            /*Mathematics*/
-          min = 6.8
-          max = 18.7;
-          break;
-         case 19:            /*Science*/
-          min = 14.0
-          max = 18.7;
-          break;
-         case 20:            /*Social Studies*/
-          min = 9.9
-          max = 24.4;
-          break;
-         case 21:            /*Statistics*/
-          min = 6.8
-          max = 18.7;
-          break;
-         case 24:            /*Visual and Performing Arts*/
-          min = 9.3
-          max = 17.4;
-          break;
-        default:
-          min = 10
-          max = 28;
-    }
-    TuitionFeesSlider.slider('setAttribute', 'min', min);
-    TuitionFeesSlider.slider('setAttribute', 'max', max);
-    var newVal = 0.5 * (min + max);
-    TuitionFeesSlider.slider('setValue', newVal);
-    $('#TuitionFeesBox')[0].innerHTML = "$ " +  newVal.toFixed(0) + " K";
-}
-
-// GapYear
-function updateGapYear (ev) {
-  $('#GapYearBox')[0].innerHTML = ev.value;
-  updateUnchanged('#GapYearBox');
-}
-var GapYearSlider = $('#GapYearSlider').slider(sliderOptions);
-GapYearSlider.on('slide', updateGapYear);
-GapYearSlider.on('slideStop', updateGapYear);
-
-// StartingSalary
-function updateStartingSalary (ev) {
-  $('#StartingSalaryBox')[0].innerHTML = "$ " + ev.value.toFixed(0) + " K";
-  updateUnchanged('#StartingSalaryBox');
-}
-var StartingSalarySlider = $('#StartingSalarySlider').slider(sliderOptions);
-StartingSalarySlider.on('slide', updateStartingSalary);
-StartingSalarySlider.on('slideStop', updateStartingSalary);
 
 // SalaryIncrease
 function updateSalaryIncrease (ev) {
@@ -233,16 +106,18 @@ var SalaryIncreaseSlider = $('#SalaryIncreaseSlider').slider(sliderOptions);
 SalaryIncreaseSlider.on('slide', updateSalaryIncrease);
 SalaryIncreaseSlider.on('slideStop', updateSalaryIncrease);
 
+/*
+   Function updated to reflect the model that ANUSA's Education Officer asked for. 
+*/
 function getData() {
   return {
-    'InflationRate': 0.025, //InflationRateSlider.data('slider').getValue() / 100.0,
-    'BondRate': 0.035, //BondRateSlider.data('slider').getValue() / 100.0,
+    'IncreaseRate': 0.3,
+    'InflationRate': 0.013,
+    'BondRate': 0.021,
+    'StartingSalary': 59420,
     'DegreeBand': parseInt($('#DegreeBandSelector').val()),
     'DegreeLength': DegreeLengthSlider.data('slider').getValue(),
-    'TuitionFees': TuitionFeesSlider.data('slider').getValue() * 1000.0,
-    'GapYear': GapYearSlider.data('slider').getValue(),
-    'StartingSalary': 55000, //StartingSalarySlider.data('slider').getValue() * 1000,
-    'SalaryIncrease': 0.05, //SalaryIncreaseSlider.data('slider').getValue() / 100.0,
+    'SalaryIncrease': SalaryIncreaseSlider.data('slider').getValue() / 100.0,
   };
 }
 
@@ -250,14 +125,13 @@ function updateAll() {
   // Compute costs and update tables and chart data
   // Note: you will need to call chart.redraw() afterwards
   var data = getData();
-  var inflation = data.InflationRate;
-  var bondRate = data.BondRate;
+  var increase = data.IncreaseRate + 1;
+  var inflation = data.InflationRate + 1;
+  var interest = data.BondRate + 1;
   var years = data.DegreeLength;
-  var gap = data.GapYear;
   var startingSalary = data.StartingSalary;
   var salaryIncrease = data.SalaryIncrease;
   var degree = data.DegreeBand;
-  var tuitionFees = data.TuitionFees;
   var oldDebt = 0.0;    // running debt under old system
   var newDebt = 0.0;    // running debt under new system
 
@@ -265,7 +139,29 @@ function updateAll() {
   var newContribution;
   var internationalFees;
 
-  // Calculate fees per semester (today's dollars)
+  /**
+     Calculate fees per semester (today's dollars)
+     Degrees fall into different price bands. At the time of writing, there
+     are only three bands. Degree program IDs are therefore grouped into the
+     following bands:
+        0 -  99: the cheapest degree
+      100 - 199: the next cheapest degree
+      200 - 299: the most expensive degree
+      
+     Banding the IDs together in this way allows me to remove a stupidly long
+     switch statement and replace it with a couple of easy if/elses
+     
+   **/
+   
+  if (degree >= 0 && degree < 100)
+     oldAnnualFees = 6256;
+  else if (degree >= 100 && degree < 200)
+     oldAnnualFees = 8917;
+  else if (degree >= 200 && degree < 300)
+     oldAnnualFees = 10440;
+  else
+     oldAnnualFees = 0;
+     
   switch (degree) {
   case 1:
     oldAnnualFees = 10085;
@@ -341,7 +237,7 @@ function updateAll() {
     break;
   }
 
-  newAnnualFees = tuitionFees;
+  newAnnualFees = oldAnnualFees * increase;
 
   var oldFees = years * oldAnnualFees;    // total fees paid under old system (today's dollars)
   var newFees = years * newAnnualFees;    // total fees paid under new system (today's dollars)
@@ -488,6 +384,5 @@ function updateAll() {
   updateChart([oldInterest, newInterest], [oldPaidFees, newPaidFees], [oldDebt, newDebt]);
 }
 
-updateFeesSlider();
 updateAll();
 chart.redraw();
