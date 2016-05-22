@@ -197,13 +197,9 @@
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-              <h4 class="modal-title">Increase in tuition fees</h4>
+              <h4 class="modal-title" id="IncreaseRateHelpTitle"></h4>
             </div>
-            <div class="modal-body">
-               The rate of increase in tuition fees used in this model is 30%. This is based on modelling by larger universities when 20% cut first announced in 2014 Budget.
-               It’s the most conservative estimated increase.
-               <a href="http://www.businessinsider.com.au/the-cost-of-getting-a-university-degree-in-australia-is-about-to-change-heres-what-you-need-to-know-2014-6">(source)</a>.
-            </div>
+            <div class="modal-body" id="IncreaseRateHelpText"></div>
           </div>
         </div>
       </div>
@@ -214,12 +210,9 @@
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-              <h4 class="modal-title">Starting salary</h4>
+              <h4 class="modal-title" id="StartingSalaryHelpTitle"></h4>
             </div>
-            <div class="modal-body">
-               The starting salary is set at $59,420, the median grad starting salary in 2014
-               <a href="https://unistats.anu.edu.au/surveys/gds/2014_ANU_Destinations.pdf">(source)</a>.
-            </div>
+            <div class="modal-body" id="StartingSalaryHelpText"></div>
           </div>
         </div>
       </div>
@@ -230,13 +223,9 @@
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-              <h4 class="modal-title">Annual raises as percentage</h4>
+              <h4 class="modal-title" id="SalaryIncreaseHelpTitle"></h4>
             </div>
-            <div class="modal-body">
-               Choose here an annual raise given as a percentage.
-               For instance, if you begin earning $50000 in the year 2020 and this annual raise
-               percentage is 5%, then your salary in 2021 is $52500, in 2022 is $55125, and so on.
-             </div>
+            <div class="modal-body" id="SalaryIncreaseHelpText"></div>
           </div>
         </div>
       </div>
@@ -332,6 +321,7 @@
       <script src="js/bootstrap.min.js"></script>
       <script src="js/bootstrap-slider.js"></script>
       <script src="js/highcharts.js"></script>
+      <script src="js/model.js"></script>
       <script src="js/main.js"></script>
 
    </body>

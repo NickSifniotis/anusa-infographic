@@ -107,24 +107,21 @@ SalaryIncreaseSlider.on('slideStop', updateSalaryIncrease);
 
 
 /*
-   Create the degree selector drop down
+   Create the degree selector drop down.
+   
+   The Model() contains both the degree program 'bands' and the lists of
+   degree programs that correspond to those bands.
 */
 function initialiseDegreeList() {
+   var model = Model();
    var dropdown = document.getElementById ("DegreeBandSelector");
    
-   var degree_programs = [
-                           ["Humanities", "Behavioural Science", "Social studies", "Foreign Languages", "Visual and Performing Arts", "Education and Nursing"],
-                           ["Computing", "Built Environment", "Health", "Engineering", "Surveying", "Agriculture", "Mathematics", "Statistics", "Science"],
-                           ["Accounting", "Administration", "Economics", "Commerce", "Law", "Dentistry", "Medicine", "Veterinary Science"]
-                         ];
-   
    var degree_program_tuples = [];
-   for (var i = 0; i < 3; i ++) {
+   for (var i = 0; i < model.DegreeBands.length; i ++) {
       var offset = i * 100;
       
-      for (var j = 0; j < degree_programs[i].length; j ++) {
-         var tuple = [degree_programs[i][j], offset];
-         degree_program_tuples.push (tuple);
+      for (var j = 0; j < model.DegreePrograms[i].length; j ++) {
+         degree_program_tuples.push ([model.DegreePrograms[i][j], offset]);
          offset ++;
       }
    }
@@ -144,29 +141,28 @@ function initialiseDegreeList() {
 /*
    Function updated to reflect the model that ANUSA's Education Officer asked for. 
 */
-function getData() {
+function getGUIData() {
   return {
-    'IncreaseRate': 0.3,
-    'InflationRate': 0.013,
-    'BondRate': 0.021,
-    'StartingSalary': 59420,
     'DegreeBand': parseInt($('#DegreeBandSelector').val()),
     'DegreeLength': DegreeLengthSlider.data('slider').getValue(),
-    'SalaryIncrease': SalaryIncreaseSlider.data('slider').getValue() / 100.0,
+    'SalaryIncrease': (SalaryIncreaseSlider.data('slider').getValue() / 100.0) + 1
   };
 }
 
 function updateAll() {
   // Compute costs and update tables and chart data
   // Note: you will need to call chart.redraw() afterwards
-  var data = getData();
-  var increase = data.IncreaseRate + 1;
-  var inflation = data.InflationRate + 1;
-  var interest = data.BondRate + 1;
-  var years = data.DegreeLength;
-  var startingSalary = data.StartingSalary;
-  var salaryIncrease = data.SalaryIncrease + 1;
-  var degree = data.DegreeBand;
+  var gui_data = getGUIData();
+  var model = Model();
+  
+  var increase = model.IncreaseRate;
+  var inflation = model.InflationRate;
+  var interest = model.IndexationRate;
+  var startingSalary = model.StartingSalary;
+  
+  var years = gui_data.DegreeLength;
+  var salaryIncrease = gui_data.SalaryIncrease;
+  var degree = gui_data.DegreeBand;
   var oldDebt = 0.0;    // running debt under old system
   var newDebt = 0.0;    // running debt under new system
 
@@ -182,25 +178,16 @@ function updateAll() {
         0 -  99: the cheapest degree
       100 - 199: the next cheapest degree
       200 - 299: the most expensive degree
-      
-     Banding the IDs together in this way allows me to remove a stupidly long
-     switch statement and replace it with a couple of easy if/elses
-     
+
+      However, the system is written to accept more degree cost bands in future.
    **/
    
-  if (degree >= 0 && degree < 100)
-     oldAnnualFees = 6256;
-  else if (degree >= 100 && degree < 200)
-     oldAnnualFees = 8917;
-  else if (degree >= 200 && degree < 300)
-     oldAnnualFees = 10440;
-  else
-     oldAnnualFees = 0;
-     
+  oldAnnualFees = model.DegreeBands[Math.floor (degree / 100)];      // there's something to be said for this piece of code right here
   newAnnualFees = oldAnnualFees * increase;
 
   var oldFees = years * oldAnnualFees;    // total fees paid under old system (today's dollars)
   var newFees = years * newAnnualFees;    // total fees paid under new system (today's dollars)
+
 
   /* Stage 1 - Studying */
   
