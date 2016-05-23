@@ -363,6 +363,9 @@ $('#HelpModal').on('show.bs.modal', function (event) {
 })
 
 
+/*
+   Load the language packs onto the website.
+*/
 function initialiseGUI() {
    var language_pack = Language();
    

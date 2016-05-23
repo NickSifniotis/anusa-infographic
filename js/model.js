@@ -12,6 +12,9 @@
    
    This function simply collates all of the data and returns it to the
    main calculation function in a neat little package.
+   
+   
+   This file also stores the language packs - for the moment.
 **/
 
 function Model () {
@@ -32,7 +35,7 @@ function Model () {
 function Language() {
    return {
       'Title': "The cost of a university degree before/after deregulation",
-      'InfoBlurb': "<p>ANUSA's blurb goes here.</p><p>Lots and lots of text! Yay</p>",
+      'InfoBlurb': "<p>The Federal Government has released an options paper called ‘Driving Innovation, Fairness and Excellence in Australian Higher Education’. One of the floated options is a 20% cut in funding to the higher education sector with the shortfall to be covered by an increase in students’ tuition fees. This was first included in the Federal Government’s 2014 Budget and is estimated to lead to a 30% increase in tuition fees for students.</p><p>The following interactive info-graphic created by ANU student Nick Sifniotis models the effect that a 30% increase in tuition fees will have on student debt.</p>",
       'ModelExplain': "This is where the text explaining the model goes. Note that interest is 2.1%, inflation is 1.3% and the starting salary is 59,420. The increase to the cost of tuition is anticipated to be at least 30%.",
       'Fields':    [
                      { 'Name': "Subject area",
@@ -47,9 +50,9 @@ function Language() {
                        'ID': "SalaryIncrease",
                        'HelpText': "Choose here an annual raise given as a percentage. For instance, if you begin earning $50000 in the year 2020 and this annual raise percentage is 5%, then your salary in 2021 is $52500, in 2022 is $55125, and so on."},
                        
-                     { 'Name': "Interest rate",
+                     { 'Name': "Indexation rate",
                        'ID': "InterestRate",
-                       'HelpText': "The indexation rate applied to HECS/HELP loans in 2015 was 2.1%. <a href=\"https://www.ato.gov.au/rates/help-and-financial-supplement-indexation-rates/\">Source</a>."},
+                       'HelpText': "There is no interest charged on HELP debts. Your accumulated HELP debt is subject to indexation, which is applied on 1 June each year to maintain its real value by adjusting it in line with changes in the cost of living (as measured by the Consumer Price Index (CPI) figure released in March)."},
                        
                      { 'Name': "Inflation rate",
                        'ID': "InflationRate", 
