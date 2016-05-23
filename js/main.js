@@ -338,6 +338,26 @@ function updateAll() {
   updateChart([oldInterest, newInterest], [oldPaidFees, newPaidFees], [oldDebt, newDebt]);
 }
 
+
+/*
+   Event handler for help modal dialog box
+*/
+$('#HelpModal').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget)
+  var recipient = button.data('field')
+  var modal = $(this)
+
+  var target_field;
+  var language = Language().Fields;
+  for (var i = 0; i < language.length; i ++)
+     if (language[i].ID == recipient)
+        target_field = language[i];
+        
+  modal.find('.modal-title').text(target_field.Name)
+  modal.find('.modal-body').text(target_field.HelpText)
+})
+
+
 initialiseDegreeList();
 updateAll();
 chart.redraw();

@@ -48,28 +48,28 @@
                   </tr>
                   <tr>
                     <td>Years to repay loan after graduation
-                       <a href="#" data-toggle="modal" data-target="#YearsTakenModal">[?]</a>
+                       <a href="#" data-toggle="modal" data-target="#HelpModal" data-field="YearsTaken">[?]</a>
                     </td>
                     <td id="OldYearsBox"></td>
                     <td id="NewYearsBox"></td>
                   </tr>
                   <tr>
                     <td>Total cost of education
-                       <a href="#" data-toggle="modal" data-target="#TotalPaidModal">[?]</a>
+                       <a href="#" data-toggle="modal" data-target="#HelpModal" data-field="TotalPaid">[?]</a>
                     </td>
                     <td id="OldPaidBox"></td>
                     <td id="NewPaidBox"></td>
                   </tr>
                   <tr>
                     <td>Interest paid
-                       <a href="#" data-toggle="modal" data-target="#InterestPaidModal">[?]</a>
+                       <a href="#" data-toggle="modal" data-target="#HelpModal" data-field="InterestPaid">[?]</a>
                     </td>
                     <td id="OldInterestBox"></td>
                     <td id="NewInterestBox"></td>
                   </tr>
                   <tr>
                     <td>Remaining debt upon retirement
-                       <a href="#" data-toggle="modal" data-target="#RemainingDebtModal">[?]</a>
+                       <a href="#" data-toggle="modal" data-target="#HelpModal" data-field="RemainingDebt">[?]</a>
                     </td>
                     <td id="OldUnpaidBox"></td>
                     <td id="NewUnpaidBox"></td>
@@ -90,39 +90,39 @@
 
                  <div class="form-group">
                    <label for="DegreeLength" class="input-label control-label">Degree length</label>
-                   <button type="button" class="btn" data-toggle="modal" data-target="#DegreeModal">?</button>
+                   <button type="button" class="btn" data-toggle="modal" data-target="#HelpModal" data-field="DegreeLength">?</button>
                    <input type="text" id="DegreeLengthSlider" class="slider form-control" data-slider-min="3" data-slider-max="6" data-slider-step="1" data-slider-value="4">
                    <b id=DegreeLengthBox>4</b>
                  </div>
 
                  <div class="form-group">
                    <label for="SalaryIncrease" class="input-label control-label">Annual raises as percentage</label>
-                   <button type="button" class="btn" data-toggle="modal" data-target="#SalaryIncreaseModal">?</button>
+                   <button type="button" class="btn" data-toggle="modal" data-target="#HelpModal" data-field="SalaryIncrease">?</button>
                    <input type="text" id="SalaryIncreaseSlider" class="slider form-control" data-slider-min="0" data-slider-max="10" data-slider-step="0.1" data-slider-value="5">
                    <b id=SalaryIncreaseBox>5.0 %</b>
                  </div>
                  
                  <div class="form-group">
                    <label class="input-label control-label">Interest Rate</label>
-                   <button type="button" class="btn" data-toggle="modal" data-target="#InterestRateModal">?</button>
+                   <button type="button" class="btn" data-toggle="modal" data-target="#HelpModal" data-field="InterestRate">?</button>
                    <b class="slider">2.1%</b>      <!-- This is madness!! -->
                  </div>
                  
                  <div class="form-group">
                    <label class="input-label control-label">Inflation Rate</label>
-                   <button type="button" class="btn" data-toggle="modal" data-target="#InflationRateModal">?</button>
+                   <button type="button" class="btn" data-toggle="modal" data-target="#HelpModal" data-field="InflationRate">?</button>
                    <b class="slider">1.3%</b>      <!-- Madness? THIS IS SPARTA! -->
                  </div>
                  
                  <div class="form-group">
                    <label class="input-label control-label">Starting Salary</label>
-                   <button type="button" class="btn" data-toggle="modal" data-target="#StartingSalaryModal">?</button>
+                   <button type="button" class="btn" data-toggle="modal" data-target="#HelpModal" data-field="StartingSalary">?</button>
                    <b class="slider">$59,420</b>
                  </div>
                  
                  <div class="form-group">
                    <label class="input-label control-label">Increase to Tuition Cost</label>
-                   <button type="button" class="btn" data-toggle="modal" data-target="#IncreaseRateModal">?</button>
+                   <button type="button" class="btn" data-toggle="modal" data-target="#HelpModal" data-field="IncreaseRate">?</button>
                    <b class="slider">30.0%</b>
                  </div>
                  
@@ -135,6 +135,10 @@
          </div>
 
          <div class="row">
+            Development options go here (demo only)
+         </div>
+
+         <div class="row">
             <div class="col-md-8 col-md-offset-2" id="footer">
                Footer text goes here, assuming that a footer is required.
             </div>
@@ -142,110 +146,6 @@
 
       </div>
 
-      <!-- Information modals -->
-      <!--Years-->
-      <div class="modal fade bs-example-modal-sm" id="DegreeModal" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-sm">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-              <h4 class="modal-title">Degree length</h4>
-            </div>
-            <div class="modal-body">
-               Choose here the number of years it takes to complete the degree.
-               A typical university degree takes 3 to 4 years.
-             </div>
-          </div>
-        </div>
-      </div>
-
-      <!--Inflation rate-->
-      <div class="modal fade bs-example-modal-lg" id="InflationRateModal" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-              <h4 class="modal-title">Inflation Rate</h4>
-            </div>
-            <div class="modal-body">
-               The change in the Consumer Price Index in March 2016 was 1.3%.
-               <a href="http://www.rba.gov.au/inflation/measures-cpi.html">Source</a>.
-             </div>
-          </div>
-        </div>
-      </div>
-
-      <!--Interest as indexation as per the ATO website -->
-      <div class="modal fade bs-example-modal-lg" id="InterestRateModal" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-              <h4 class="modal-title">Interest Rate</h4>
-            </div>
-            <div class="modal-body">
-               The indexation rate applied to HECS/HELP loans in 2015 was 2.1%.
-               <a href="https://www.ato.gov.au/rates/help-and-financial-supplement-indexation-rates/">Source</a>.
-          </div>
-          </div>
-        </div>
-      </div>
-
-      <!--Rate of increase -->
-      <div class="modal fade bs-example-modal-sm" id="IncreaseRateModal" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-sm">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-              <h4 class="modal-title" id="IncreaseRateHelpTitle"></h4>
-            </div>
-            <div class="modal-body" id="IncreaseRateHelpText"></div>
-          </div>
-        </div>
-      </div>
-
-      <!--Starting salary-->
-      <div class="modal fade bs-example-modal-sm" id="StartingSalaryModal" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-sm">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-              <h4 class="modal-title" id="StartingSalaryHelpTitle"></h4>
-            </div>
-            <div class="modal-body" id="StartingSalaryHelpText"></div>
-          </div>
-        </div>
-      </div>
-
-      <!--Annual raises-->
-      <div class="modal fade bs-example-modal-sm" id="SalaryIncreaseModal" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-sm">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-              <h4 class="modal-title" id="SalaryIncreaseHelpTitle"></h4>
-            </div>
-            <div class="modal-body" id="SalaryIncreaseHelpText"></div>
-          </div>
-        </div>
-      </div>
-
-      <!--Years taken-->
-      <div class="modal fade bs-example-modal-sm" id="YearsTakenModal" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-sm">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-              <h4 class="modal-title">Years taken to repay the loan</h4>
-            </div>
-            <div class="modal-body">
-               This number is the number of years that it takes after
-               graduation to repay the loan.  If this number is 50, then
-               there is still debt remaining 50 years after graduation.
-            </div>
-          </div>
-        </div>
-      </div>
 
       <!--Remaining debt-->
       <div class="modal fade bs-example-modal-sm" id="RemainingDebtModal" tabindex="-1" role="dialog">
@@ -260,6 +160,19 @@
                This number reflects the amount of debt remaining on the loan in today's
                dollars when the student retires.  It is shown in red in the graph.
              </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Help model dialog-->
+      <div class="modal fade bs-example-modal-sm" id="HelpModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title" id="HelpModalTitle"></h4>
+            </div>
+            <div class="modal-body" id="HelpModalText"></div>
           </div>
         </div>
       </div>
@@ -314,7 +227,6 @@
         </div>
       </div>
 
-      <!--End info modals-->
 
       <!--Scripts for sliders and chart-->
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>

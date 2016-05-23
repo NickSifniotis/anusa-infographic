@@ -33,14 +33,14 @@ function Language() {
    return {
       'Title': "The cost of a university degree before/after deregulation",
       'InfoBlurb': "<p>ANUSA's blurb goes here.</p><p>Lots and lots of text! Yay</p>",
-      'Variables': [
+      'Fields':    [
                      { 'Name': "Subject area",
                        'ID': "DegreeBand",
                        'HelpText': ""},
                        
                      { 'Name': "Degree length",
                        'ID': "DegreeLength",
-                       'HelpText': ""},
+                       'HelpText': "Choose here the number of years it takes to complete the degree. A typical university degree takes 3 to 4 years."},
                        
                      { 'Name': "Annual raises as percentage", 
                        'ID': "SalaryIncrease",
@@ -48,11 +48,11 @@ function Language() {
                        
                      { 'Name': "Interest rate",
                        'ID': "InterestRate",
-                       'HelpText': ""},
+                       'HelpText': "The indexation rate applied to HECS/HELP loans in 2015 was 2.1%. <a href=\"https://www.ato.gov.au/rates/help-and-financial-supplement-indexation-rates/\">Source</a>."},
                        
                      { 'Name': "Inflation rate",
                        'ID': "InflationRate", 
-                       'HelpText': ""},
+                       'HelpText': "The change in the Consumer Price Index in March 2016 was 1.3%. <a href=\"http://www.rba.gov.au/inflation/measures-cpi.html\">Source</a>."},
                      
                      { 'Name': "Starting salary",
                        'ID': "StartingSalary", 
@@ -60,7 +60,11 @@ function Language() {
                      
                      { 'Name': "Increases to tuition costs",
                        'ID': "IncreaseRate", 
-                       'HelpText': "The rate of increase in tuition fees used in this model is 30%. This is based on modelling by larger universities when 20% cut first announced in 2014 Budget. It’s the most conservative estimated increase. <a href=\"http://www.businessinsider.com.au/the-cost-of-getting-a-university-degree-in-australia-is-about-to-change-heres-what-you-need-to-know-2014-6\">(source)</a>." }
+                       'HelpText': "The rate of increase in tuition fees used in this model is 30%. This is based on modelling by larger universities when 20% cut first announced in 2014 Budget. It’s the most conservative estimated increase. <a href=\"http://www.businessinsider.com.au/the-cost-of-getting-a-university-degree-in-australia-is-about-to-change-heres-what-you-need-to-know-2014-6\">(source)</a>." },
+                       
+                     { 'Name': "Years Taken",
+                       'ID': "YearsTaken",
+                       'HelpText': "This number is the number of years that it takes after graduation to repay the loan.  If this number is 50, then there is still debt remaining 50 years after graduation." },
                    ],
    }
 }
