@@ -33,6 +33,7 @@ function Language() {
    return {
       'Title': "The cost of a university degree before/after deregulation",
       'InfoBlurb': "<p>ANUSA's blurb goes here.</p><p>Lots and lots of text! Yay</p>",
+      'ModelExplain': "This is where the text explaining the model goes. Note that interest is 2.1%, inflation is 1.3% and the starting salary is 59,420. The increase to the cost of tuition is anticipated to be at least 30%.",
       'Fields':    [
                      { 'Name': "Subject area",
                        'ID': "DegreeBand",
@@ -62,9 +63,22 @@ function Language() {
                        'ID': "IncreaseRate", 
                        'HelpText': "The rate of increase in tuition fees used in this model is 30%. This is based on modelling by larger universities when 20% cut first announced in 2014 Budget. It’s the most conservative estimated increase. <a href=\"http://www.businessinsider.com.au/the-cost-of-getting-a-university-degree-in-australia-is-about-to-change-heres-what-you-need-to-know-2014-6\">(source)</a>." },
                        
-                     { 'Name': "Years Taken",
+                     { 'Name': "Years to repay loan after graduation",
                        'ID': "YearsTaken",
                        'HelpText': "This number is the number of years that it takes after graduation to repay the loan.  If this number is 50, then there is still debt remaining 50 years after graduation." },
+                       
+                     { 'Name': "Remaining debt upon retirement",
+                       'ID': "RemainingDebt",
+                       'HelpText': "This model assumes that the student retires 50 years after graduating from university. This number reflects the amount of debt remaining on the loan in today's dollars when the student retires.  It is shown in red in the graph." },
+                       
+                     { 'Name': "Interest paid",
+                       'ID': "InterestPaid",
+                       'HelpText': "<p>This number represents the total amount of interest paid for the education in today's dollars. This number is shown in blue in the graph.</p><p>If there is debt remaining more than 50 years after graduation, the interest that accrues on that debt is not shown here.</p>"},
+                       
+                     { 'Name': "Total cost of education",
+                       'ID': "TotalPaid",
+                       'HelpText': "<p>This number represents the total amount paid for the education including both tuition fees and interest. This number is the sum of the black and blue portions of the graph. If the student retires with debt still remaining on the loan, then the debt remaining is not included in the total cost of the education.</p><p>This number is the cost in today's dollars. This means that dollar sums for loan payments in future years are readjusted with inflation so that they make sense in 2014 dollars. For instance, if the inflation rate is 2%, a loan payment of $1000 in the year 2024 translates to $1000 * (1.02)^(-10) or $820.34 in today's dollars.</p>" }
                    ],
+      'Footer': "(c) Nick Sifniotis 2016. All rights reserved."
    }
 }

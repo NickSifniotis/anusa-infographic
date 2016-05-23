@@ -347,17 +347,43 @@ $('#HelpModal').on('show.bs.modal', function (event) {
   var recipient = button.data('field')
   var modal = $(this)
 
-  var target_field;
+  var target_field = 0;
   var language = Language().Fields;
   for (var i = 0; i < language.length; i ++)
      if (language[i].ID == recipient)
         target_field = language[i];
         
-  modal.find('.modal-title').text(target_field.Name)
-  modal.find('.modal-body').text(target_field.HelpText)
+  if (target_field == 0) {
+     modal.find('.modal-title').text("Error");
+     modal.find('.modal-body').html("Unable to locate language resource '" + recipient + "'");
+  } else {
+     modal.find('.modal-title').text(target_field.Name);
+     modal.find('.modal-body').html(target_field.HelpText);
+  }
 })
 
 
-initialiseDegreeList();
+function initialiseGUI() {
+   var language_pack = Language();
+   
+   $("#title")[0].innerHTML = language_pack.Title;
+   $("#header")[0].innerHTML = language_pack.Title;
+   $("#info_blurb")[0].innerHTML = language_pack.InfoBlurb;
+   $("#model_explain")[0].innerHTML = language_pack.ModelExplain;
+   $("#footer")[0].innerHTML = language_pack.Footer;
+   
+   var fields = language_pack.Fields;
+   for (var i = 0; i < fields.length; i ++) {
+      var field = $("#" + fields[i].ID);
+      if (field.length > 0)
+         field[0].innerHTML = fields[i].Name;
+   }
+   
+   initialiseDegreeList();
+}
+
+
+
+initialiseGUI();
 updateAll();
 chart.redraw();
