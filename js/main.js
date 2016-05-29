@@ -374,7 +374,6 @@ function initialiseGUI() {
    $("#info_blurb")[0].innerHTML = language_pack.InfoBlurb;
    $("#before")[0].innerHTML = language_pack.Before;
    $("#after")[0].innerHTML = language_pack.After;
-   $("#footer")[0].innerHTML = language_pack.Footer;
    
    var fields = language_pack.Fields;
    for (var i = 0; i < fields.length; i ++) {

@@ -1,0 +1,349 @@
+
+/** 
+*
+* WHAT THIS FILE DOES:;
+* 1. Define default values for customizable elements.
+* 2. Grab the user-created values (or the defaults) from OptionTree and assign them to CSS selectors.
+*
+* Note to theme-developers: Make sure you're not setting any of these values in your theme stylesheets. That just makes for extra work...
+*
+**/
+
+/* Run NiceScroll CSS based on user OPTIONS - Also see Run Scripts at the bottom of this document */
+
+
+	
+
+	/*  - THEME PRIMARY COLOR -  */	
+	.theme_primary_color_text,
+	.th_show_hide.th_flag_toggle:hover,
+	h2.entry-title > a:hover,
+	a, 
+	a:visited,
+	#page .tagcloud a,
+	#page nav ul.menu .sub-menu li.menu-item a:hover,
+	#page nav ul.menu .sub-menu li.menu-item > a,
+	#page #section-navigation #site-navigation ul.mega-sub-menu li.mega-menu-item a,
+	button, .button, input[type="button"], input[type="reset"], input[type="submit"],
+	#page table tr td > a {	
+		color: #144563; 
+	}
+
+	/*  - THEME SECONDARY COLORS -  */
+	#page a:hover,
+	.duration,
+	.author-description > h3,	
+	.flag_toggle .icon > i:hover,
+	#page #section-tophat-dropdown a:hover,
+	#section-tophat .th_flag_toggle:hover .th_trigger i,
+	#section-tophat .th_flag_toggle:hover .th_trigger.blurb,
+	#section-tophat .menu-item-title:hover,
+	#page #section-tophat a:hover {
+		color: #ea7b48; 
+	}
+
+	.vc_btn_outlined:hover,
+	.nav-next:hover, .nav-previous:hover,
+	#section-content .tribe-events-widget-link:hover, 
+	#section-content .tribe-events-widget-link:hover a,
+	#page .add_to_cart_button:hover {
+    border-color: #ea7b48 !important;
+    background-color: #ea7b48 !important;
+    color: white !important;
+	}
+
+	/*  - THEME SECONDARY BG-COLORS -  */
+	#section-header nav ul.menu ul li:hover, 
+	#section-header nav ul.menu ul li.sfHover,
+	#section-header nav ul.menu ul li:hover > a, 
+	#section-header nav ul.menu ul li.sfHover > a,
+	#page #section-navigation .mega-menu-flyout .mega-sub-menu li.mega-menu-item:hover,
+	#page #section-navigation .mega-menu-flyout .mega-sub-menu li.mega-menu-item:hover a,
+	.wpb_tabs_nav li.ui-state-default a,
+	.course-meta .status.in-progress,
+	.meter.red > span, 
+	#page .tagcloud a:hover,
+	.sensei .nav-next a:hover, .sensei .nav-prev a:hover, 
+	#page .lesson input:hover {
+		background-color: #ea7b48; 
+		color: white !important;
+	}
+
+	
+	#page .button.wc-forward, 
+	.highlight-row, 
+	.ui-accordion-header-active a,
+	.theme_primary_color_bg,
+	.ui-state-active .ui-tabs-anchor,
+	.wpb_content_element .wpb_tabs_nav li:hover a,
+	#page .button,
+	#page .tagcloud a,
+	.wpb_tabs_nav li.ui-state-active a, 
+	#my-courses.ui-tabs .ui-tabs-nav li.ui-state-active a, 
+	#page a.my-messages-link:hover, 
+    #page .ui-state-active a.ui-tabs-anchor:hover, 
+    #page #my-courses.ui-tabs .ui-tabs-nav li a:hover,
+    .lesson input[type="submit"], 
+    .course input[type="submit"] {
+		background-color: #144563; 
+		color: white !important;
+	}
+
+	
+
+	/* - !IMPORTANT OVERRIDES */
+	#dynamic-to-top:hover span {	
+		background-image: url("http://www.anusa.com.au/wp-content/themes/polytechnic/theme-core/theme-assets/images/up.png") !important;
+	}
+	
+	.woocommerce span.onsale, 
+	.woocommerce-page span.onsale, 
+	.button.add_to_cart_button.product_type_simple, 
+	#page .woocommerce .form-row input.button {
+	  background: #144563 !important;
+	  text-shadow: 0 1px 0 #144563 !important;
+	}
+	.woocommerce a.button, 
+	.woocommerce button.button .woocommerce input.button, 
+	.woocommerce #respond input#submit, 
+	.woocommerce #content input.button, 
+	.woocommerce-page a.button, 
+	.woocommerce-page button.button, 
+	.woocommerce-page input.button, 
+	.woocommerce-page #respond input#submit, 
+	.woocommerce-page #content input.button {
+		background: -moz-linear-gradient(center top , #FFF -100%, #144563 100%) repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
+		border-color: #144563 !important;
+		text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.6);
+		}
+	.woocommerce a.button:hover, 
+	.woocommerce button.button .woocommerce input.button:hover, 
+	.woocommerce #respond input#submit:hover, 
+	.woocommerce #content input.button:hover, 
+	.woocommerce-page a.button:hover, 
+	.woocommerce-page button.button:hover, 
+	.woocommerce-page input.button:hover, 
+	.woocommerce-page #respond input#submit:hover, 
+	.woocommerce-page #content input.button:hover, 
+	#page .woocommerce .form-row input.button:hover {
+		background: -moz-linear-gradient(center top , #FFF -100%, #ea7b48 100%) repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
+		border-color: #ea7b48 !important;
+		}
+	.woocommerce ul.products li.product .price, 
+	.woocommerce-page ul.products li.product .price, 
+	.woocommerce div.product span.price, 
+	.woocommerce div.product p.price, 
+	.woocommerce #content div.product span.price, 
+	.woocommerce #content div.product p.price, 
+	.woocommerce-page div.product span.price, 
+	.woocommerce-page div.product p.price, 
+	.woocommerce-page #content div.product span.price, 
+	.woocommerce-page #content div.product p.price {
+		color: #ea7b48 !important;
+	}
+
+	/* STRIPE BACKGROUND COLOR & OPACITY */
+
+	#page #section-super-header, #page #section-tophat{background: transparent; position: relative;}	
+	#page #section-header{width: 100%;}
+
+	#page #section-header .container,
+	#page #section-tophat .container{z-index: 3;}
+
+	#section-tophat .stripe_color{
+		position:absolute;
+		top:0px;
+		width:100%;
+		height:100%;
+		background-color: #011a29; 
+		z-index: 2;
+		}
+
+	#section-header .stripe_color{
+		position:absolute;
+		top:0px;
+		width:100%;
+		height:100%;
+		background-color: #144563; 
+		opacity:0.8;
+		z-index: 2;
+		}
+
+
+	/*  - THEME SECONDARY BG-COLORS -  */
+	#sf_results #sf_val ul li.sf_selected,
+	.button:hover, 
+	.button:active, 
+	.button:focus,
+	input[type="submit"]:hover,
+	input[type="submit"]:active,
+	input[type="submit"]:focus{
+		background-color: #ea7b48 !important;
+	}
+
+	/*  - THEME PRIMARY BG-COLORS OVERRIDES -  */
+	#section-header, 
+	#section-footer,
+	#page .pptwj-tabs-wrap .tab-links {	
+		background-color: #144563; 
+	}
+	
+	#page .pptwj-tabs-wrap .tab-links,
+	.th_slidingDiv, 
+	.wpb_tabs_nav {
+		border-bottom-color: #144563 !important;
+	}
+
+	/*  - THEME SECONDARY BG-COLORS OVERRIDES -  */
+	.pptwj-tabs-wrap .tab-links li a.selected, 
+	.pptwj-tabs-wrap .tab-links li a:hover {
+		background-color: #ea7b48 !important; 
+	}
+
+	/* DEFAULT POST-GRID HOVER COLORS */
+		.module-content{background: transparent;}
+		.module-inner .color_background{ 
+			position:absolute;
+			top:0px;
+			left:0px;
+			width:100%;
+			height:100%;
+			z-index: 1 !important;
+			background-color: #144563; 
+			opacity:0;
+			}
+			.module-inner:hover .color_background{
+				opacity: 0.9;
+				}
+	
+	/*  - Slider Arrows -  */
+	.tp-leftarrow.default {
+	  background-color: #144563;
+	  background-image: url("http://www.anusa.com.au/wp-content/themes/polytechnic/theme-core/theme-assets/images/slider_arrow_left.png") !important;
+	  border-radius: 20px;
+	}
+	.tp-rightarrow.default {
+	  background-color: #144563;
+	  background-image: url("http://www.anusa.com.au/wp-content/themes/polytechnic/theme-core/theme-assets/images/slider_arrow_right.png") !important;
+	  border-radius: 20px;
+	}
+
+
+	/* SKIN BUILDER */
+
+	#section-tophat-dropdown{
+		background-color: #1f3345;
+				}
+	#section-tophat{
+		background-color: #011a29;
+				}
+	#section-header .stripe_image{
+		position: absolute; top: 0; left: 0; height: 100%; width: 100%; z-index: 1;
+		background-color: #144563;
+				}
+	#section-sticky-header-background{
+		background-color: #011A29;
+				}
+	html, body, #section-content{
+		background-color: #ffffff;
+				}
+	#section-content .container > .sixteen{
+		background-color: #ffffff;
+				}
+	#section-footer{
+		background-color: #1f3345;
+				}
+	#section-sub-footer{
+		background-color: #011a29;
+				}
+
+
+/*  - Layout: Content AD Space -  */
+	.content-ad-space {margin-bottom: 2rem;}
+
+	#page .entry-title, #page .breadcrumbs {text-align: left;}
+
+	
+	#section-header h1.site-title{
+		margin-top: 1rem !important; 
+		}
+	
+	#section-header h1.site-title{
+		margin-bottom: 1rem !important; 
+		}
+	
+	#section-header nav ul.menu, #section-header nav ul.mega-menu {
+		padding-top: 4.5rem !important; 
+		}
+	
+	#section-header nav ul.menu, #section-header nav ul.mega-menu {
+		padding-bottom: 4.5rem !important; 
+		}
+	
+	#section-sticky-header h1.site-title{
+		margin-top: 0.5rem !important; 
+		}
+	
+	#section-sticky-header h1.site-title{
+		margin-bottom: 0.5rem !important; 
+		}
+	
+	#section-sticky-header nav ul.menu{
+		padding-top: 0.4rem !important; 
+		}
+	
+	#section-sticky-header nav ul.menu, #section-sticky-header li ul.sub-menu{
+		padding-bottom: 0.4rem !important; 
+		}
+	
+	#section-sticky-header, #section-sticky-header-background {
+		height: 4rem !important; 
+		}
+.tribe-events-adv-list-widget > div.type-tribe_events {
+border: 2px solid #ebebeb;
+border-radius: 6px;
+margin: 0 4% 1.6rem 0 !important;
+padding: 2rem;
+width: 45% !important;
+}
+
+.tribe-events-adv-list-widget > div.type-tribe_events * {
+font-size: 1.6rem;
+text-align: center !important;
+font-weight: 400;
+margin: 1rem 0 !important;
+}
+
+/* ==============================
+TRIBE&WOOCOMMERCE TICKETS 
+===============================*/
+
+/* - TICKET BORDER - */
+#page .tribe-events-tickets {
+border: 2px solid #ebebeb;
+}
+/* - TABLE DATA BORDER - */
+#page table.tribe-events-tickets td {
+border-top: 0 solid transparent;
+padding: 1rem 2rem;
+}
+/* - LINE UP CART BUTTON - OPTION 1 - */
+#page .tribe-events-tickets .woocommerce.add-to-cart {
+padding: 1.5rem;
+text-align: center;
+}
+
+.mega-menu>li.mega-menu-item-has-children ul.mega-sub-menu {
+border-top: 5px solid #144563;
+}
+ul.mega-menu>li>ul>li.mega-menu-item>a {
+color: #fff;
+font-size: 1.8rem;
+font-weight: 500;
+letter-spacing: 0.4px;
+height: 39px;
+line-height: 1.7;
+padding: 4px 0;
+text-transform: capitalize;
+transition: all 0.2s ease-out 0s;
+} 

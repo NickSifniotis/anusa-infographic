@@ -82,7 +82,6 @@ function Language() {
                      { 'Name': "Total cost of education",
                        'ID': "TotalPaid",
                        'HelpText': "<p>This number represents the total amount paid for the education including both tuition fees and interest. This number is the sum of the black and blue portions of the graph. If the student retires with debt still remaining on the loan, then the debt remaining is not included in the total cost of the education.</p><p>This number is the cost in today's dollars. This means that dollar sums for loan payments in future years are readjusted with inflation so that they make sense in 2014 dollars. For instance, if the inflation rate is 2%, a loan payment of $1000 in the year 2024 translates to $1000 * (1.02)^(-10) or $820.34 in today's dollars.</p>" }
-                   ],
-      'Footer': "(c) Nick Sifniotis 2016. All rights reserved."
+                   ]
    }
 }
