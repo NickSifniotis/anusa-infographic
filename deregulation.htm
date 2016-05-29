@@ -1,163 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      
-      <title id="title"></title>
-      
-      <link href="css/bootstrap.min.css" rel="stylesheet">
-      <link href="css/slider.css" rel="stylesheet">
-      <link href="css/main.css" rel="stylesheet">
+    <head>
 
-   </head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-   <body>
-      <div class="container">
-         <div class="row" id="header"></div>
+        <title id="title"></title>
 
-         <div class="row">
-            <!--Info blurb-->
-            <div class="col-md-3" id="info_blurb"></div>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/slider.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
 
-            <!--Output stuff here-->
-            <div class="col-md-5">
-               <!--Chart container-->
-               <div id="container"></div>
-               
-               <!--Output table-->
-               <table class="output-table table table-bordered">
-                  <tr>
-                    <td></td>
-                    <td>Before</td>
-                    <td>After</td>
-                  </tr>
-                  <tr>
-                    <td>
-                       <span id="YearsTaken"></span>
-                       <a href="#" data-toggle="modal" data-target="#HelpModal" data-field="YearsTaken">[?]</a>
-                    </td>
-                    <td id="OldYearsBox"></td>
-                    <td id="NewYearsBox"></td>
-                  </tr>
-                  <tr>
-                    <td>
-                       <span id="TotalPaid"></span>
-                       <a href="#" data-toggle="modal" data-target="#HelpModal" data-field="TotalPaid">[?]</a>
-                    </td>
-                    <td id="OldPaidBox"></td>
-                    <td id="NewPaidBox"></td>
-                  </tr>
-                  <tr>
-                    <td>
-                       <span id="InterestPaid"></span>
-                       <a href="#" data-toggle="modal" data-target="#HelpModal" data-field="InterestPaid">[?]</a>
-                    </td>
-                    <td id="OldInterestBox"></td>
-                    <td id="NewInterestBox"></td>
-                  </tr>
-                  <tr>
-                    <td>
-                       <span id="RemainingDebt"></span>
-                       <a href="#" data-toggle="modal" data-target="#HelpModal" data-field="RemainingDebt">[?]</a>
-                    </td>
-                    <td id="OldUnpaidBox"></td>
-                    <td id="NewUnpaidBox"></td>
-                  </tr>
-               </table>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row" id="header"></div>
+
+            <div class="row">
+                <!--Info blurb-->
+                <div class="col-md-12 typography" id="info_blurb"></div>
             </div>
 
-            <!--Input stuff here-->
-            <div class="col-md-4">
-               <form class="form-horizontal" id="inputs" role="form">
-               
-                 <!-- This dropdown is autopopulated by the Javascript -->
-                 <div class="form-group">
-                   <label for="DegreeBand" class="input-label control-label" id="DegreeBand"></label>
-                   <select class="selectpicker form-control" id="DegreeBandSelector"></select>
-                 </div>
+            <div class="row">
+                <div class="col-md-5 typography">
+                    <form class="form-horizontal" id="inputs" role="form">
+                        <div class="form-group">
+                            <label for="DegreeBand" class="input-label control-label" id="DegreeBand"></label>
+                            <select class="selectpicker form-control" id="DegreeBandSelector"></select>
+                        </div>
 
-                 <div class="form-group">
-                   <label for="DegreeLength" class="input-label control-label" id="DegreeLength"></label>
-                   <button type="button" class="btn" data-toggle="modal" data-target="#HelpModal" data-field="DegreeLength">?</button>
-                   <input type="text" id="DegreeLengthSlider" class="slider form-control" data-slider-min="3" data-slider-max="6" data-slider-step="1" data-slider-value="4">
-                   <b id=DegreeLengthBox>4</b>
-                 </div>
+                        <div class="form-group">
+                            <label for="DegreeLength" class="input-label control-label" id="DegreeLength"></label>
+                            <button type="button" class="btn" data-toggle="modal" data-target="#HelpModal" data-field="DegreeLength">?</button>
+                            <input type="text" id="DegreeLengthSlider" class="slider form-control" data-slider-min="3" data-slider-max="6" data-slider-step="1" data-slider-value="4">
+                            <b id=DegreeLengthBox>4</b>
+                        </div>
 
-                 <div class="form-group">
-                   <label for="SalaryIncrease" class="input-label control-label" id="SalaryIncrease"></label>
-                   <button type="button" class="btn" data-toggle="modal" data-target="#HelpModal" data-field="SalaryIncrease">?</button>
-                   <input type="text" id="SalaryIncreaseSlider" class="slider form-control" data-slider-min="0" data-slider-max="10" data-slider-step="0.1" data-slider-value="5">
-                   <b id=SalaryIncreaseBox>5.0 %</b>
-                 </div>
-                 
-                 <div class="form-group">
-                   <label class="input-label control-label" id="InterestRate"></label>
-                   <button type="button" class="btn" data-toggle="modal" data-target="#HelpModal" data-field="InterestRate">?</button>
-                   <b class="slider">2.1%</b>      <!-- This is madness!! -->
-                 </div>
-                 
-                 <div class="form-group">
-                   <label class="input-label control-label" id="InflationRate"></label>
-                   <button type="button" class="btn" data-toggle="modal" data-target="#HelpModal" data-field="InflationRate">?</button>
-                   <b class="slider">1.3%</b>      <!-- Madness? THIS IS SPARTA! -->
-                 </div>
-                 
-                 <div class="form-group">
-                   <label class="input-label control-label" id="StartingSalary"></label>
-                   <button type="button" class="btn" data-toggle="modal" data-target="#HelpModal" data-field="StartingSalary">?</button>
-                   <b class="slider">$59,420</b>
-                 </div>
-                 
-                 <div class="form-group">
-                   <label class="input-label control-label" id="IncreaseRate"></label>
-                   <button type="button" class="btn" data-toggle="modal" data-target="#HelpModal" data-field="IncreaseRate">?</button>
-                   <b class="slider">30.0%</b>
-                 </div>
-                 
-                 <div class="form-group" id="model_explain"></div>
-               </form>
+                        <div class="form-group">
+                            <label for="SalaryIncrease" class="input-label control-label" id="SalaryIncrease"></label>
+                            <button type="button" class="btn" data-toggle="modal" data-target="#HelpModal" data-field="SalaryIncrease">?</button>
+                            <input type="text" id="SalaryIncreaseSlider" class="slider form-control" data-slider-min="0" data-slider-max="10" data-slider-step="0.1" data-slider-value="5">
+                            <b id=SalaryIncreaseBox>5.0 %</b>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="input-label control-label" id="InterestRate"></label>
+                            <button type="button" class="btn" data-toggle="modal" data-target="#HelpModal" data-field="InterestRate">?</button>
+                            <b class="slider">2.1%</b>      <!-- This is madness!! -->
+                        </div>
+
+                        <div class="form-group">
+                            <label class="input-label control-label" id="InflationRate"></label>
+                            <button type="button" class="btn" data-toggle="modal" data-target="#HelpModal" data-field="InflationRate">?</button>
+                            <b class="slider">1.3%</b>      <!-- Madness? THIS IS SPARTA! -->
+                        </div>
+
+                        <div class="form-group">
+                            <label class="input-label control-label" id="StartingSalary"></label>
+                            <button type="button" class="btn" data-toggle="modal" data-target="#HelpModal" data-field="StartingSalary">?</button>
+                            <b class="slider">$59,420</b>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="input-label control-label" id="IncreaseRate"></label>
+                            <button type="button" class="btn" data-toggle="modal" data-target="#HelpModal" data-field="IncreaseRate">?</button>
+                            <b class="slider">30.0%</b>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="col-md-7 typography">
+                    <!--Chart container-->
+                    <div id="container"></div>
+
+                    <!--Output table-->
+                    <table class="output-table table table-bordered">
+                        <tr>
+                            <td></td>
+                            <td><span id="before"></span></td>
+                            <td><span id="after"></span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span id="YearsTaken"></span>
+                                <a href="#" data-toggle="modal" data-target="#HelpModal" data-field="YearsTaken">[?]</a>
+                            </td>
+                            <td id="OldYearsBox"></td>
+                            <td id="NewYearsBox"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span id="TotalPaid"></span>
+                                <a href="#" data-toggle="modal" data-target="#HelpModal" data-field="TotalPaid">[?]</a>
+                            </td>
+                            <td id="OldPaidBox"></td>
+                            <td id="NewPaidBox"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span id="InterestPaid"></span>
+                                <a href="#" data-toggle="modal" data-target="#HelpModal" data-field="InterestPaid">[?]</a>
+                            </td>
+                            <td id="OldInterestBox"></td>
+                            <td id="NewInterestBox"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span id="RemainingDebt"></span>
+                                <a href="#" data-toggle="modal" data-target="#HelpModal" data-field="RemainingDebt">[?]</a>
+                            </td>
+                            <td id="OldUnpaidBox"></td>
+                            <td id="NewUnpaidBox"></td>
+                        </tr>
+                    </table>
+                </div>
             </div>
-         </div>
 
-
-         <!-- Different development options and switches go here, for demonstration purposes only -->
-         <div class="row">
-            Development options go here (demo only)
-         </div>
-
-
-         <!-- Footer row -->
-         <div class="row">
-            <div class="col-md-8 col-md-offset-2" id="footer"></div>
-         </div>
-
-      </div>
-
-
-      <!--Help model dialog-->
-      <div class="modal fade bs-example-modal-sm" id="HelpModal" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-sm">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-              <h4 class="modal-title" id="HelpModalTitle"></h4>
+            <!-- Footer row -->
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2" id="footer"></div>
             </div>
-            <div class="modal-body" id="HelpModalText"></div>
-          </div>
         </div>
-      </div>
+
+        <!--Help model dialog-->
+        <div class="modal fade" id="HelpModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="HelpModalTitle"></h4>
+                    </div>
+                    <div class="modal-body typography" id="HelpModalText"></div>
+                </div>
+            </div>
+        </div>
 
 
-      <!--Scripts for sliders and chart-->
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-      <script src="js/bootstrap.min.js"></script>
-      <script src="js/bootstrap-slider.js"></script>
-      <script src="js/highcharts.js"></script>
-      <script src="js/model.js"></script>
-      <script src="js/main.js"></script>
+        <!--Scripts for sliders and chart-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/bootstrap-slider.js"></script>
+        <script src="js/highcharts.js"></script>
+        <script src="js/model.js"></script>
+        <script src="js/main.js"></script>
 
-   </body>
-
+    </body>
 </html>

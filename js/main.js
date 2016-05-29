@@ -37,7 +37,7 @@ var chart = new Highcharts.Chart({
     name: 'Fees',
     data: [0, 0]
   }],
-  colors: ['#f15c80', '#7cb5ec', '#434348'],
+  colors: ['#F07922', '#FEC50D', '#2171A6'],            // Note the ANUSA colour scheme (pulled from the CSS)
 });
 
 function updateChart(interest, fees, remaining) {
@@ -372,7 +372,8 @@ function initialiseGUI() {
    $("#title")[0].innerHTML = language_pack.Title;
    $("#header")[0].innerHTML = language_pack.Title;
    $("#info_blurb")[0].innerHTML = language_pack.InfoBlurb;
-   $("#model_explain")[0].innerHTML = language_pack.ModelExplain;
+   $("#before")[0].innerHTML = language_pack.Before;
+   $("#after")[0].innerHTML = language_pack.After;
    $("#footer")[0].innerHTML = language_pack.Footer;
    
    var fields = language_pack.Fields;

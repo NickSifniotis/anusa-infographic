@@ -35,8 +35,9 @@ function Model () {
 function Language() {
    return {
       'Title': "The cost of a university degree before/after deregulation",
-      'InfoBlurb': "<p>The Federal Government has released an options paper called ‘Driving Innovation, Fairness and Excellence in Australian Higher Education’. One of the floated options is a 20% cut in funding to the higher education sector with the shortfall to be covered by an increase in students’ tuition fees. This was first included in the Federal Government’s 2014 Budget and is estimated to lead to a 30% increase in tuition fees for students.</p><p>The following interactive info-graphic created by ANU student Nick Sifniotis models the effect that a 30% increase in tuition fees will have on student debt.</p>",
-      'ModelExplain': "This is where the text explaining the model goes. Note that interest is 2.1%, inflation is 1.3% and the starting salary is 59,420. The increase to the cost of tuition is anticipated to be at least 30%.",
+      'InfoBlurb': "<p>The Federal Government has released an options paper called ‘Driving Innovation, Fairness and Excellence in Australian Higher Education’. One of the floated options is a 20% cut in funding to the higher education sector with the shortfall to be covered by an increase in students’ tuition fees. This was first included in the Federal Government’s 2014 Budget and is estimated to lead to a 30% increase in tuition fees for students.</p><p>This infographic (created by ANU student <a href=\"http://www.github.com/NickSifniotis\">Nick Sifniotis</a>) models the effect that a 30% increase in tuition fees will have on student debt.</p>",
+      'Before': "Before",
+      'After': "After",
       'Fields':    [
                      { 'Name': "Subject area",
                        'ID': "DegreeBand",

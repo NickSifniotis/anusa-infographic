@@ -1,10 +1,60 @@
-/* Page title */
+/* ANUSA Colour scheme
+    Blue    #47C8F5
+    Navy    #2171A6
+    Orange1 #EC5E24
+    Orange2 #F07922
+    Yellow  #FEC50D
+    
+    Text    #414345
+    Header  #444
+    
+*/
+
+/* Typography */
+@font-face {
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Roboto Slab Bold"), local("RobotoSlab-Bold"), url("http://fonts.gstatic.com/s/robotoslab/v6/dazS1PrQQuCxC3iOAJFEJTqR_3kx9_hJXbbyU8S6IN0.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Raleway"), local("Raleway-Regular"), url("http://fonts.gstatic.com/s/raleway/v11/IczWvq5y_Cwwv_rBjOtT0w.woff") format("woff");
+}
+
+body {
+    color: #414345;
+    font-family: "Raleway";
+    font-weight: 400;
+    margin-bottom: 2.4rem;
+}
+
+.typography {
+    font-size: 14px;
+    line-height: 22.75px;
+    margin-bottom: 24px;
+}
+
 #header {
+    font-family: "Roboto Slab";
+    color: #444;
+    font-size: 3.2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: 0px;
     text-align: center;
-    font-weight: bold;
-    font-size: 300%;
     padding-top: 18pt;
     padding-bottom: 25pt;
+}
+
+.modal-header {
+    font-weight: 700;
+    background-color: #2171A6;
+    color: #FEC50D;
 }
 
 /* Chart container */
