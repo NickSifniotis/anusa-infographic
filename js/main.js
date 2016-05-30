@@ -31,27 +31,21 @@ var chart = new Highcharts.Chart({
     name: 'Unpaid debt',
     data: [0, 0]
   }, {
-    name: 'Interest',
-    data: [0, 0]
-  }, {
-    name: 'Fees',
+    name: 'Fees (Indexed)',
     data: [0, 0]
   }],
-  colors: ['#F07922', '#FEC50D', '#2171A6'],            // Note the ANUSA colour scheme (pulled from the CSS)
+  colors: ['#F07922', '#2171A6'],            // Note the ANUSA colour scheme (pulled from the CSS)
 });
 
-function updateChart(interest, fees, remaining) {
+function updateChart(fees, remaining) {
   // update chart data but don't redraw
   chart.series[0].setData(remaining, false);
-  chart.series[1].setData(interest, false);
-  chart.series[2].setData(fees, false);
+  chart.series[1].setData(fees, false);
 }
 
-function updateTable(paid, interest, years, debt) {
+function updateTable(paid, years, debt) {
   $('#OldPaidBox')[0].innerHTML = "$ " + paid[0].toFixed(0);
   $('#NewPaidBox')[0].innerHTML = "$ " + paid[1].toFixed(0);
-  $('#OldInterestBox')[0].innerHTML = "$ " + interest[0].toFixed(0);
-  $('#NewInterestBox')[0].innerHTML = "$ " + interest[1].toFixed(0);
   $('#NewYearsBox')[0].innerHTML = years[0];
   $('#OldYearsBox')[0].innerHTML = years[1];
   $('#OldUnpaidBox')[0].innerHTML = "$ " + debt[0].toFixed(0);
@@ -194,7 +188,7 @@ function updateAll() {
   var inflationInflator = 1;
   for (var i = 0; i < years; i++) {
     // old system
-    oldDebt *= inflation
+    oldDebt *= interest;
     oldDebt += oldAnnualFees * inflationInflator;
 
     // new system
@@ -243,7 +237,7 @@ function updateAll() {
       break;
     }
 
-    oldDebt *= inflation;   // debt indexed by inflation
+    oldDebt *= interest;   // debt indexed by indexation
 
     // debt repayments
     if (income*repaymentRate >= oldDebt) {   // finish paying off loan
@@ -299,7 +293,7 @@ function updateAll() {
       break;
     }
 
-    newDebt *= interest;    // debt indexed by the bond rate
+    newDebt *= interest;    // debt indexed by indexation
 
     // debt repayments
     if (income * repaymentRate > newDebt) {   // finish paying off loan
@@ -334,8 +328,8 @@ function updateAll() {
     newPaidFees = newPaid;
   }
 
-  updateTable([oldPaid + oldDebt, newPaid + newDebt], [oldInterest, newInterest], [newYears - years, oldYears - years], [oldDebt, newDebt]);
-  updateChart([oldInterest, newInterest], [oldPaidFees, newPaidFees], [oldDebt, newDebt]);
+  updateTable([oldPaid + oldDebt, newPaid + newDebt], [newYears - years, oldYears - years], [oldDebt, newDebt]);
+  updateChart([oldPaidFees, newPaidFees], [oldDebt, newDebt]);
 }
 
 

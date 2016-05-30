@@ -61,7 +61,7 @@ function Language() {
                      
                      { 'Name': "Starting salary",
                        'ID': "StartingSalary", 
-                       'HelpText': "The starting salary is set at $59,420, the median grad starting salary in 2014 <a href=\"https://unistats.anu.edu.au/surveys/gds/2014_ANU_Destinations.pdf\">(source)</a>."},
+                       'HelpText': "The starting salary is set at $59,420, the average graduate starting salary in 2014 <a href=\"https://unistats.anu.edu.au/surveys/gds/2014_ANU_Destinations.pdf\">(source)</a>."},
                      
                      { 'Name': "Increases to tuition costs",
                        'ID': "IncreaseRate", 
@@ -73,15 +73,11 @@ function Language() {
                        
                      { 'Name': "Remaining debt upon retirement",
                        'ID': "RemainingDebt",
-                       'HelpText': "This model assumes that the student retires 50 years after graduating from university. This number reflects the amount of debt remaining on the loan in today's dollars when the student retires.  It is shown in red in the graph." },
-                       
-                     { 'Name': "Interest paid",
-                       'ID': "InterestPaid",
-                       'HelpText': "<p>This number represents the total amount of interest paid for the education in today's dollars. This number is shown in blue in the graph.</p><p>If there is debt remaining more than 50 years after graduation, the interest that accrues on that debt is not shown here.</p>"},
+                       'HelpText': "This model assumes that the student retires 50 years after graduating from university. This number reflects the amount of debt remaining on the loan in today's dollars when the student retires.  It is shown in orange in the graph." },
                        
                      { 'Name': "Total cost of education",
                        'ID': "TotalPaid",
-                       'HelpText': "<p>This number represents the total amount paid for the education including both tuition fees and interest. This number is the sum of the black and blue portions of the graph. If the student retires with debt still remaining on the loan, then the debt remaining is not included in the total cost of the education.</p><p>This number is the cost in today's dollars. This means that dollar sums for loan payments in future years are readjusted with inflation so that they make sense in 2014 dollars. For instance, if the inflation rate is 2%, a loan payment of $1000 in the year 2024 translates to $1000 * (1.02)^(-10) or $820.34 in today's dollars.</p>" }
+                       'HelpText': "<p>This number represents the total amount paid for the education, with debt indexed at 2.1% after it is 11 months old. This number is represented by the blue portion of the graph. If the student retires with debt still remaining on the loan, then the debt remaining is represented by the orange portion of the graph.</p>" }
                    ]
    }
 }
